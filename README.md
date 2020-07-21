@@ -28,3 +28,4 @@ Cheers!
 - Aditya Srivastava, VESIT, [linkedin](https://www.linkedin.com/in/adi10hero), [github](https://www.github.com/adi10hero) (yeah I know, I need not specifiy github here, but still :D )
 - Deepika Pomendkar, SPIT, [linkedin](https://www.linkedin.com/in/deepika-pomendkar-201bb4175/), Contact Number:9757098640 (Add your contact too guys so we can create a Whatsapp group)
 - Niral Khambhati, BITS Hyd, [linkedin](https://www.linkedin.com/in/niral-khambhati-35835b176/), WhatsApp : +919727896468
+- Sidharth Sunilkumar, NITC, [linkedin](https://www.linkedin.com/in/sidharth-sunilkumar-86991b129/), WhatsApp : 7909148583
