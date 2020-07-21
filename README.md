@@ -17,3 +17,4 @@ Cheers,
 ## Members
 
 - Aditya Srivastava, VESIT, [linkedin](https://www.linkedin.com/in/adi10hero), [github](https://www.github.com/adi10hero) (yeah I know, I need not specifiy github here, but still :D )
+- Deepika Pomendkar, SPIT, [linkedin](https://www.linkedin.com/in/deepika-pomendkar-201bb4175/), Contact Number:9757098640 (Add your contact too guys so we can create a Whatsapp group)
