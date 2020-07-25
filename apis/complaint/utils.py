@@ -21,6 +21,7 @@ def convert_to_text(file_path):
 
     command = "ffmpeg -i test.mp4 -ab 160k -ac 2 -ar 44100 -vn audio.wav"
     os.system(command)
+    print("^^^^^^^^^^^^",os.getcwd())
     AUDIO_FILE = "audio.wav"
     r = sr.Recognizer()
 
@@ -28,6 +29,7 @@ def convert_to_text(file_path):
     with sr.AudioFile(AUDIO_FILE) as source:
         audio = r.record(source)
         text += r.recognize_google(audio)
+
 
     os.remove("test.mp4")
     os.remove("audio.wav")
