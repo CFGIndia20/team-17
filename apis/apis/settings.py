@@ -31,7 +31,8 @@ ALLOWED_HOSTS = [
     '0.0.0.0',
     '127.0.0.1',
     'http://127.0.0.1:8000/',
-    'b5bc4680e1c9.ngrok.io'
+    'b5bc4680e1c9.ngrok.io',
+    '2a8d29436202.ngrok.io'
 ]
 
 
