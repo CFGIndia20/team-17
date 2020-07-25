@@ -6,7 +6,7 @@ with open('../saved_models/sdg.pkl', 'rb') as fid:
 
 def predict(x_test):
     """
-    Array of string : Description of the location / problem
+    Array of strings : Description of the location / problem
     returns the list of predicted categories
     """
     global sgd
