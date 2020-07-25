@@ -1,7 +1,7 @@
 import pickle
 from sklearn.linear_model import SGDClassifier
 
-with open('../../saved_models/sdg.pkl', 'rb') as fid:
+with open('../saved_models/sdg.pkl', 'rb') as fid:
     sgd = pickle.load(fid)
 
 def predict(x_test):
@@ -14,6 +14,7 @@ def predict(x_test):
 
 ### Just for testing ####
 # TODO: Delete before production
+
 if __name__ == "__main__":
     print(
         predict(
