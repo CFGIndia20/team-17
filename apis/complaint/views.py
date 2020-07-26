@@ -50,6 +50,7 @@ def postComplaint(request):
                 for messaging_event in entry['messaging']:
 
                     # IDs
+                    bucket_words=["hii","hiiii","hello","can you help me","whatsup","hey","no","noo"]
                     sender_id = messaging_event['sender']['id']
                     recipient_id = messaging_event['recipient']['id']
 
@@ -57,8 +58,37 @@ def postComplaint(request):
                         # Extracting text message
                         if 'text' in messaging_event['message']:
                             messaging_text = messaging_event['message']['text']
-                            listOfCategory = ml.predict([messaging_text])
-                            reply = firestore1('text', [listOfCategory[0],messaging_text], sender_id)
+
+                            if messaging_text.lower()=="track status":
+                                reply = "Enter your complaint as <Complaint Id>"
+
+                            elif messaging_text.lower() in bucket_words:
+                                reply = "Hey There."+"You can either file a new Complaint or Track a preivious Complaint"+"        Type:- <Track status> to know your Complaint Status"
+                                bot.send_text_message(sender_id,reply )
+
+                                return HttpResponse("hi", 200)
+
+
+                            elif "<" in messaging_text:
+                                s= messaging_text.index('<')
+                                e = messaging_text.index('>')
+                                print("*******************",messaging_text[s:e])
+                                ans = messaging_text[s+1:e]
+                                query = db.collection('user').document(sender_id).collection("complaints").document(ans).get().to_dict()
+                                if query:
+                                    reply = "Status:  "+query["complaintStatus"]
+                                    bot.send_text_message(sender_id, reply)
+                                else:
+                                    bot.send_text_message(sender_id, "No complaint with this Id")
+
+                                return HttpResponse("hi", 200)
+
+
+
+
+                            else:
+                                listOfCategory = ml.predict([messaging_text])
+                                reply = firestore1('text', [listOfCategory[0],messaging_text], sender_id)
                         elif 'attachments' in messaging_event['message']:
                             attachment = messaging_event['message']['attachments'][0]
                             if attachment['type']=='audio':
@@ -176,7 +206,8 @@ def firestore1(type,data,sender_id):
             'category': "",
             "status": 0,
             'audio_url': '',
-            'timestamp':now
+            'timestamp':now,
+            "complaintStatus":"In progress"
 
         }
         reply=''
